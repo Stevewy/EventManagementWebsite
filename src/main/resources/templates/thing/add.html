@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/jquery-3.2.1.slim.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/popper.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/feather.min.js}" ></script>
+    <script type="text/javascript" th:src="@{/js/Chart.min.js}" ></script>
+    <title>All Things</title>
+</head>
+
+<body>
+    <div th:insert="~{commons/thingsCommon::toolBar}"></div>
+    <div th:insert="~{commons/thingsCommon::sideBar(active='add')}"></div>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <form class="form-signin" th:action="@{/thing/addThing}">
+            <label>
+                <input type="text" name="context" class="form-control" th:placeholder="context"  required="" autofocus="">
+            </label>
+            <br>
+            <label>
+                <input type="number" name="level" class="form-control" th:placeholder="level" required="">
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="submit"></button>
+        </form>
+    </main>
+
+
+</body>
+
+</html>
